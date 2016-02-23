@@ -4,7 +4,6 @@ graph =facebook.GraphAPI(token)
 PROFILE_ID ='me'
 attach = {
   "name": 'Hello world',
-  "link": 'http://www.google.com',
   "caption": 'test post',
   "description": 'some test',
   "picture" : 'download.jpg',
