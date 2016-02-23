@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Facebook Login JavaScript Example</title>
+<meta charset="UTF-8">
+</head>
+<body>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1696134447317960',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+
+    FB.getLoginStatus(function(response) {
+
+    if (response.status === 'connected') {
+     document.getElementById('status').innerHTML = 'Loged in' ;
+    } 
+    else if (response.status === 'not_authorized') {
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this app.';
+    } else {
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into Facebook.';
+    }
+  });
+   
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+
+function login()
+{
+
+ FB.login(function(response)
+ {
+     if (response.status === 'connected') {
+     document.getElementById('status').innerHTML = 'Loged in' ;
+    } 
+    else if (response.status === 'not_authorized') {
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this app.';
+    } else {
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into Facebook.';
+    }
+
+ },{scope: 'publish_actions'});
+
+}
+
+function userID() {
+
+    FB.api('/me','GET',{fields: 'first_name,last_name, name,id'}, function(response) {
+      document.getElementById('status').innerHTML ='User ID : ' + response.id ;
+    });
+
+  }
+
+
+
+ function GetToken() {
+
+  FB.getLoginStatus(function(response) {
+   document.getElementById('status').innerHTML = 'Access Token  :  ' + response.authResponse.accessToken;
+   });
+
+  }
+
+
+
+
+</script>
+<button onclick="login()">login<button>
+<button onclick="userID()">ID</button>
+<button onclick="GetToken()">Token</button>
+<button onclick="posr()">post</button>
+
+<div id="status">
+
+
+
+</body>
+</html>
