@@ -1,0 +1,33 @@
+
+var app=angular.module('myApp', [])
+app.controller('myCtrl', function ($scope, $http) {
+   
+
+    $scope.sendPost = function() {
+        var data = $.param({
+            json: JSON.stringify({
+                
+            oauth_consumer_key="eVn2thT0m67dUIsXBYBZhoanw",
+	    oauth_nonce="53a0f9437a466f8a2647f4f8c02084bc", 
+	    oauth_signature="PKhLqjPR9LQGIdh7R%2Bt5z0pRdAE%3D", 
+	    oauth_signature_method="HMAC-SHA1",  
+	    oauth_timestamp="1456901888", 
+	    oauth_token="388776429-Jvb2gUnvp2AGF2jKGFSibWvhtBoX2gIqsO2Ohqrs",
+	    oauth_version="1.0"' --verbose
+
+            })
+        });
+        $http.post("https://api.twitter.com/oauth/request_token", data).success(function(response, status) {
+            $scope.hello = data;
+        })
+    }                   
+})
+
+
+
+
+
+
+
+
+

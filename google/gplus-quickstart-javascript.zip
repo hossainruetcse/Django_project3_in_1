@@ -1,0 +1,16 @@
+--2016-03-02 18:48:35--  https://github.com/googleplus/gplus-quickstart-javascript/archive/master.zip
+Resolving github.com (github.com)... 192.30.252.131
+Connecting to github.com (github.com)|192.30.252.131|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://codeload.github.com/googleplus/gplus-quickstart-javascript/zip/master [following]
+--2016-03-02 18:48:40--  https://codeload.github.com/googleplus/gplus-quickstart-javascript/zip/master
+Resolving codeload.github.com (codeload.github.com)... 192.30.252.161
+Connecting to codeload.github.com (codeload.github.com)|192.30.252.161|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/zip]
+Saving to: ‘master.zip’
+
+     0K ....                                                   3.87M=0.001s
+
+2016-03-02 18:48:46 (3.87 MB/s) - ‘master.zip’ saved [4483]
+
